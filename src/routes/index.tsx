@@ -9,8 +9,8 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main className="min-h-screen">
-      <FaqSection />
       <CtaSection />
+      <FaqSection />
     </main>
   );
 }
