@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { CtaSection } from "@/components/CtaSection";
 import { FaqSection } from "@/components/FaqSection";
 import { ProductsSection } from "@/components/ProductsSection";
+import { SiteFooter } from "@/components/SiteFooter";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -13,6 +14,7 @@ function Index() {
       <CtaSection />
       <FaqSection />
       <ProductsSection />
+      <SiteFooter />
     </main>
   );
 }
