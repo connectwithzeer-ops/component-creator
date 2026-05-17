@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CtaSection } from "@/components/CtaSection";
+import { FaqSection } from "@/components/FaqSection";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -7,7 +8,8 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main className="min-h-screen flex items-center">
+    <main className="min-h-screen">
+      <FaqSection />
       <CtaSection />
     </main>
   );
