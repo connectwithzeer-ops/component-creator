@@ -1,14 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ChatWidget } from "@/components/ChatWidget";
+import { LoginPage } from "@/components/LoginPage";
 
 export const Route = createFileRoute("/")({
-  component: Index,
+  component: LoginPage,
+  head: () => ({
+    meta: [
+      { title: "Log in | ChatBot" },
+      { name: "description", content: "Log in to your ChatBot account to manage your bots and conversations." },
+    ],
+  }),
 });
-
-function Index() {
-  return (
-    <main className="min-h-screen bg-background">
-      <ChatWidget />
-    </main>
-  );
-}
