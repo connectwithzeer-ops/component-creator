@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { Eye, EyeOff, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 function GoogleIcon() {
   return (
@@ -31,10 +31,8 @@ function AppleIcon() {
   );
 }
 
-export function LoginPage() {
+export function SignupPage() {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -42,7 +40,6 @@ export function LoginPage() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      {/* Header */}
       <header className="flex items-center justify-between px-6 py-5 md:px-10">
         <div className="flex items-center gap-2">
           <div className="flex h-9 w-9 items-center justify-center rounded-md bg-[oklch(0.55_0.22_255)] text-white">
@@ -57,30 +54,29 @@ export function LoginPage() {
           type="button"
           className="rounded-md border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground hover:bg-secondary transition-colors"
         >
-          Sign up free
+          Log in
         </button>
       </header>
 
-      {/* Main */}
       <main className="flex-1 flex justify-center px-4 py-8">
         <div className="w-full max-w-md">
           <div className="text-center">
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground">Welcome back</h1>
-            <p className="mt-2 text-base text-muted-foreground">Log in to your account</p>
+            <h1 className="text-3xl md:text-4xl font-bold text-foreground">Get started for free</h1>
+            <p className="mt-2 text-base text-muted-foreground">No credit card needed</p>
           </div>
 
           <div className="mt-8 space-y-3">
             <button type="button" className="flex w-full items-center justify-center gap-3 rounded-md border border-border bg-card px-4 py-3 text-sm font-semibold text-foreground hover:bg-secondary transition-colors">
               <GoogleIcon />
-              Log in with Google
+              Sign up with Google
             </button>
             <button type="button" className="flex w-full items-center justify-center gap-3 rounded-md border border-border bg-card px-4 py-3 text-sm font-semibold text-foreground hover:bg-secondary transition-colors">
               <MicrosoftIcon />
-              Log in with Microsoft
+              Sign up with Microsoft
             </button>
             <button type="button" className="flex w-full items-center justify-center gap-3 rounded-md border border-border bg-card px-4 py-3 text-sm font-semibold text-foreground hover:bg-secondary transition-colors">
               <AppleIcon />
-              Log in with Apple
+              Sign up with Apple
             </button>
           </div>
 
@@ -105,55 +101,27 @@ export function LoginPage() {
               />
             </div>
 
-            <div>
-              <div className="flex items-center justify-between mb-1.5">
-                <label htmlFor="password" className="block text-sm font-semibold text-foreground">
-                  Password
-                </label>
-                <a href="#" className="text-sm font-medium text-[oklch(0.55_0.22_255)] hover:underline">
-                  Forgot password?
-                </a>
-              </div>
-              <div className="relative">
-                <input
-                  id="password"
-                  type={showPassword ? "text" : "password"}
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="12 characters or more"
-                  className="w-full rounded-md border border-border bg-card px-3 py-2.5 pr-10 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-[oklch(0.55_0.22_255)] focus:border-transparent"
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword((v) => !v)}
-                  aria-label={showPassword ? "Hide password" : "Show password"}
-                  className="absolute inset-y-0 right-0 flex items-center pr-3 text-muted-foreground hover:text-foreground"
-                >
-                  {showPassword ? <Eye className="h-5 w-5" /> : <EyeOff className="h-5 w-5" />}
-                </button>
-              </div>
-            </div>
-
             <button
               type="submit"
-              className="w-full rounded-md bg-foreground py-3 text-sm font-semibold text-background hover:opacity-90 transition-opacity"
+              className="w-full rounded-md bg-[oklch(0.55_0.22_25)] py-3 text-sm font-semibold text-white hover:opacity-90 transition-opacity"
             >
-              Log in with email
+              Sign up with email
             </button>
           </form>
 
           <p className="mt-5 text-center text-sm text-foreground">
-            Don't have an account?{" "}
+            Already have an account?{" "}
             <a href="#" className="font-medium text-[oklch(0.55_0.22_255)] hover:underline">
-              Sign up
+              Log in
             </a>
           </p>
 
-          <div className="mt-4 text-center">
-            <a href="#" className="text-sm font-medium text-[oklch(0.55_0.22_255)] hover:underline">
-              Log in with custom SSO
-            </a>
-          </div>
+          <p className="mt-4 text-center text-sm text-muted-foreground">
+            You agree to our{" "}
+            <a href="#" className="font-medium text-[oklch(0.55_0.22_255)] hover:underline">Terms of Use</a>
+            {" "}and{" "}
+            <a href="#" className="font-medium text-[oklch(0.55_0.22_255)] hover:underline">Privacy Policy</a>
+          </p>
         </div>
       </main>
 
