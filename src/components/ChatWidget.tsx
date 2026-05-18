@@ -36,7 +36,7 @@ export function ChatWidget() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <div className="fixed bottom-6 right-6 z-50 flex flex-row items-center gap-3">
       {/* Compact bubble (closed state) */}
       {!open && (
         <div className="flex items-center gap-2 rounded-full bg-card shadow-lg pl-2 pr-1 py-1 max-w-[260px]">
