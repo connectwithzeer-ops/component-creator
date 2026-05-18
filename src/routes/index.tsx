@@ -1,12 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { LoginPage } from "@/components/LoginPage";
+import { SignupPage } from "@/components/SignupPage";
 
 export const Route = createFileRoute("/")({
-  component: LoginPage,
+  component: SignupPage,
   head: () => ({
     meta: [
-      { title: "Log in | ChatBot" },
-      { name: "description", content: "Log in to your ChatBot account to manage your bots and conversations." },
+      { title: "Sign up | ChatBot" },
+      { name: "description", content: "Create your free ChatBot account. No credit card needed." },
     ],
   }),
 });
